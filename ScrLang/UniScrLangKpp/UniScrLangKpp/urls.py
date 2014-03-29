@@ -1,10 +1,12 @@
 from django.conf.urls import patterns, include, url
+from Checkpoint import views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+                       url(r'^$', 'Checkpoint.views.Index', name='Index'),
     # Examples:
     # url(r'^$', 'UniScrLangKpp.views.home', name='home'),
     # url(r'^UniScrLangKpp/', include('UniScrLangKpp.foo.urls')),
