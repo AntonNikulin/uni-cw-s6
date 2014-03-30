@@ -2,6 +2,8 @@
 import os
 PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 
+LOGIN_REDIRECT_URL = '/'
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
