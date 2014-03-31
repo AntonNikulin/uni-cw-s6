@@ -1,4 +1,5 @@
 from django import forms
+from .models import Record
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(label=u'Username', max_length=30)
@@ -13,3 +14,9 @@ class RegistrationForm(forms.Form):
             if password2 == password1:
                 return password2
         raise forms.ValidationError('Passwords do not match.')
+
+
+class RecordForm(forms.ModelForm):
+    class Meta:
+        model = Record
+        exclude = ['recordedBy']

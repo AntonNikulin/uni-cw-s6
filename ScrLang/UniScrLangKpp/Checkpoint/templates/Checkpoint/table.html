@@ -15,8 +15,11 @@
             <tbody>
             {% for record in Records %}
                 <tr>
-                    <td>{{ record.vehicle }}</td>
-                    <td>{{ record.description }}</td>
+                    <td>{{ record.vehicleNumber }}</td>
+                    <td>{{ record.driver }}</td>
+                    <td>{{ record.cargo }}</td>
+                    <td>{{ record.time }}</td>
+                    <td>{{ record.recordedBy }}</td>
                 </tr>
             {% endfor %}
             </tbody>
