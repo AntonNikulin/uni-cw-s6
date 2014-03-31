@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+
 from forms import RegistrationForm
+from .models import Record, Person, Vehicle
 
 
 def Index(request):
@@ -21,3 +23,7 @@ def registrationPage(request):
     else:
         form = RegistrationForm()
         return render( request, 'registration/register.html', {"form": form,} )
+
+def table(request):
+    Records = Record.objects.all()
+    return render(request, 'Checkpoint/table.html', {"Records": Records})
