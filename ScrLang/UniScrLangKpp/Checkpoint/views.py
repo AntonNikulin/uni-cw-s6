@@ -31,7 +31,7 @@ def table(request):
     return render(request, 'Checkpoint/table.html', {'Records': Records})
 
 @login_required
-def record(request):
+def recordCreate(request):
     if request.method == 'POST':
         form = RecordForm(request.POST)
         if form.is_valid():
