@@ -22,7 +22,7 @@
                     <td>{{ record.vehicleNumber }}</td>
                     <td>{{ record.driver }}</td>
                     <td>{{ record.cargo }}</td>
-                    <td>{{ record.time }}</td>
+                    <td>{{ record.time| date:'H:i d/m/Y' }}</td>
                     <td>{{ record.recordedBy }}</td>
                 </tr>
             {% endfor %}

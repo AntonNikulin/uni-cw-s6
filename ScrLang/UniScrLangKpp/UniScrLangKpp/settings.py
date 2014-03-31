@@ -2,8 +2,10 @@
 import os
 PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 
+#custom settings
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
+
 #django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
