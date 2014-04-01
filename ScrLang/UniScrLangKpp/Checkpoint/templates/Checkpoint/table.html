@@ -12,8 +12,10 @@
                     <th>vehicleNumber</th>
                     <th>driver</th>
                     <th>cargo</th>
+                    <th>destination</th>
                     <th>time</th>
                     <th>recordedBy</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +27,7 @@
                     <td>{{ record.destination }}</td>
                     <td>{{ record.time| date:'H:i d/m/Y' }}</td>
                     <td>{{ record.recordedBy }}</td>
+                    <td><a href="{% url 'recordDelete' record.id %}">Delete</a></td>
                 </tr>
             {% endfor %}
             </tbody>

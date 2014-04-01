@@ -46,3 +46,7 @@ def recordCreate(request):
     else:
         form = RecordForm()
         return render(request, 'Checkpoint/record_create_form.html', {'form': form})
+
+@login_required
+def recordDelete(request, id):
+    return render(request, 'Checkpoint/')
