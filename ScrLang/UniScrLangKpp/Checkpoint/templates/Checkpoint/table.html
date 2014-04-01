@@ -27,6 +27,8 @@
                     <td>{{ record.destination }}</td>
                     <td>{{ record.time| date:'H:i d/m/Y' }}</td>
                     <td>{{ record.recordedBy }}</td>
+
+                    <!-- TODO: ajax del -->
                     <td><a href="{% url 'recordDelete' record.id %}"><i class="glyphicon glyphicon-remove "></i></a></td>
                 </tr>
             {% endfor %}

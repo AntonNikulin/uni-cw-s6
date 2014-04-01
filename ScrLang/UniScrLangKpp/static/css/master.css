@@ -2,3 +2,24 @@
     padding-top: 100px;
 }
 
+.carousel-caption{
+    z-index: 10;
+}
+
+.carousel-inner > .item > img{
+    position: absolute;
+    top:50px;
+    left: 0;
+    min-width: 100%;
+    height: auto;
+}
+
+.carousel-inner > .item{
+    height: 500px;
+}
+
+@media(min-width: 768px) {
+    .carousel-inner > .item{
+    height: 700px;
+    }
+}

@@ -9,7 +9,7 @@ from .models import Record
 
 
 def Index(request):
-    return render(request, 'base.html')
+    return render(request, 'Checkpoint/index.html')
 
 def registrationPage(request):
     if request.method == 'POST':
