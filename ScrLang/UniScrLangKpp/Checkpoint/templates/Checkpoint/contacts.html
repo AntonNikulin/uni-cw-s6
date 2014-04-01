@@ -25,7 +25,18 @@ function initialize() {
 
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-  var contentString = '<p>CheckPointHQ</p>';
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="gmapfirstHeading">CheckPoint HQ</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Adress</b>:  Antarctic '+
+      'Ross Island, '+
+      'McMurdo Station,'+
+      'IceStock Ave, 12</p>'+
+      '</div>'+
+      '</div>';
+
 
   var infowindow = new google.maps.InfoWindow({
       content: contentString
