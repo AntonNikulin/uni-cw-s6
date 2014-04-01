@@ -11,6 +11,9 @@ from .models import Record
 def Index(request):
     return render(request, 'Checkpoint/index.html')
 
+def contacts(request):
+    return render(request, 'Checkpoint/contacts.html')
+
 def registrationPage(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
