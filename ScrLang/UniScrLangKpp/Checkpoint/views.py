@@ -49,4 +49,5 @@ def recordCreate(request):
 
 @login_required
 def recordDelete(request, id):
-    return render(request, 'Checkpoint/')
+    Record.objects.get(pk=id).delete()
+    return HttpResponseRedirect(reverse('table'))
