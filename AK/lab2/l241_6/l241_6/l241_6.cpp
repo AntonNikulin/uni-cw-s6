@@ -7,18 +7,33 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int sum = 0;
-	long N = 1;
-	short Num1 = 3;
-	short Num2 =2;
+	int N = 1;
+	short Num2 = 2;
+	long RESULTS[6];		//array to store results
+
 	__asm{
-		mov DX,0; регистр DX пригодится в дальнейшем
-		mov AX,Num1; число которое будут возводить в степень
-		mov CX,Num2; степень числа
-		dec CX
-	a1:	mul Num1
-		loop a1
-; результат в DX:AX
+						;init denom
+		mov ebx, N			
+		add ebx, 5
+		push ebx			;save denominator
+		mov ebx, N			;prep for raising into N
+
+						;raising to power
+		mov DX, 0			;clear dx for future
+		mov AX, 3			;number to raise, initial run
+		mov CX, bx			;raise into
+		mov bx, 3			;number to raise, ax mult on bx
+		dec CX				;magic
+		cmp cx, 0			;if cx == 0, we've raised ax into power of 1. jmp to avoid infinite loop
+		je il
+	a1:	mul bx				;multiplies ax by the value of corresp byte-length in the AX		
+		loop a1			;Result of power raising in DX:AX
+
+	il:	push eax			;save raised results
+
+
 	}
+
 	return 0;
 }
 
