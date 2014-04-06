@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<div class="info">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 tabbable">
+                <!-- Tabs go here -->
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active"><a href="#android" data-toggle="tab">Android</a></li>
+                    <li><a href="#bb" data-toggle="tab">Blackberry</a></li>
+                    <li><a href="#ios" data-toggle="tab">iOS</a></li>
+                    <li><a href="#win" data-toggle="tab">Windows</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="android"><p><img src="{% static 'images/gplay.jpg' %}" alt="google" class="pull-right">Android... Donec eget sem lacus. Morbi vitae viverra metus. Duis gravida sapien in hendrerit ultricies. Maecenas in vestibulum lectus. Pellentesque eleifend feugiat tincidunt. <br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></p></div>
+                    <div class="tab-pane fade in" id="bb"><p><img src="{% static 'images/bbstore.jpg'%}" alt="google" class="pull-right">Blackberry... Donec eget sem lacus. Morbi vitae viverra metus. Duis gravida sapien in hendrerit ultricies. Maecenas in vestibulum lectus. Pellentesque eleifend feugiat tincidunt.<br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></p></div>
+                    <div class="tab-pane fade in" id="ios"><p><img src="{% static 'images/appstore.jpg'%}" alt="google" class="pull-right">iOS... Donec eget sem lacus. Morbi vitae viverra metus. Duis gravida sapien in hendrerit ultricies. Maecenas in vestibulum lectus. Pellentesque eleifend feugiat tincidunt.<br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></p></div>
+                    <div class="tab-pane fade in" id="win"><p><img src="{% static 'images/winstore.jpg'%}" alt="google" class="pull-right">Windows... Donec eget sem lacus. Morbi vitae viverra metus. Duis gravida sapien in hendrerit ultricies. Maecenas in vestibulum lectus. Pellentesque eleifend feugiat tincidunt.<br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></p></div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-sm-offset-2">
+                <!-- Quote go here -->
+                <blockquote>
+                    <p>&ldquo;This App has completely revolutionized the way we check our transports, we will never have to wait around in the rain, we can organize everything perfectly. I don't know how I ever lived without it.&rdquo;</p>
+                    <small>James T. Kirk, <cite title="source title">Starship Enterprise</cite></small>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
