@@ -17,11 +17,14 @@ b, strong{
 .topPadding{
     padding-top: 100px;
 }
-
+.pushUp{
+    top: -40px;
+}
 /*carousel*/
 .carousel-caption{
     z-index: 10;
 }
+
 .carousel-inner > .item > img{
     position: absolute;
     top:50px;
