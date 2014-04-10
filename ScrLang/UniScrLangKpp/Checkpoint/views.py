@@ -36,12 +36,13 @@ def table(request):
 def searchDriver(request):
     if request.method == 'POST':
         Records = Record.objects.filter(driver__icontains = request.POST['driver'])
-        return render(request, 'Checkpoint/table.html', {'Records': Records})
+        count = len(Records)
+        return render(request, 'Checkpoint/table.html', {'Records': Records,
+                                                         'count': count})
 
 def statistics(request):
     Records = Record.objects.all()
-    for r in Records:
-        print r.driver
+    print len(Records)
     return render(request, 'Checkpoint/Statistics.html')
 
 @login_required
