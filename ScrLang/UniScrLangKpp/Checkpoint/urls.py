@@ -5,5 +5,6 @@ urlpatterns = patterns('',
                         url(r'^record/create/$', 'Checkpoint.views.recordCreate', name='createRecord'),
                         url(r'record/delete/(?P<id>\d+)', 'Checkpoint.views.recordDelete', name='recordDelete'),
                         url(r'search/driver$', 'Checkpoint.views.searchDriver', name='searchDriver'),
+                        url(r'statistics$', 'Checkpoint.views.statistics', name='statistics'),
                         url(r'contacts/$', 'Checkpoint.views.contacts', name='contacts'),
 )
