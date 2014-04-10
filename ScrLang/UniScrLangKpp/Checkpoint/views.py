@@ -41,9 +41,14 @@ def searchDriver(request):
                                                          'count': count})
 
 def statistics(request):
+    driverCount = {}
     Records = Record.objects.all()
-    print len(Records)
-    return render(request, 'Checkpoint/Statistics.html')
+    for rec in Records:
+        if rec.driver not in driverCount:
+            driverCount[rec.driver] = 1
+        else:
+            driverCount[rec.driver] += 1
+    return render(request, 'Checkpoint/Statistics.html', {'driverCount': driverCount})
 
 @login_required
 def recordCreate(request):

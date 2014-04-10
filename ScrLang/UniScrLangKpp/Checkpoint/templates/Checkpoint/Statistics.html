@@ -3,6 +3,16 @@
 {% block title %}Statistics | Checkpoint{% endblock title %}
 
 {% block content %}
-{% include 'info.html' %}
+    <div class="topPadding">
+        <div class="container">
+            <div class="row">
+                <ul class="list-group ">
+                {% for k, v in driverCount.items %}
+                    <li class="list-group-item">{{ k }} <span class="badge">{{ v }}</span></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
