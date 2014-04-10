@@ -33,6 +33,11 @@ def table(request):
     Records = Record.objects.all()
     return render(request, 'Checkpoint/table.html', {'Records': Records})
 
+def searchDriver(request):
+    if request.method == 'POST':
+        Records = Record.objects.filter(driver__startswith = request.POST['driver'])
+        return render(request, 'Checkpoint/table.html', {'Records': Records})
+
 @login_required
 def recordCreate(request):
     if request.method == 'POST':

@@ -15,9 +15,10 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="{% url 'createRecord' %}">Add Record</a></li>
-                    <form id="navbarSearch" role="search" class="navbar-form navbar-left">
+                    <form id="navbarSearch" action="{% url 'searchDriver' %}" method="POST" role="search" class="navbar-form navbar-left">
+                        {% csrf_token %}
                         <div class="form-group">
-                            <input type="text" placeholder="Search" class="form-control">
+                            <input name="driver" type="text" placeholder="Search" class="form-control">
                         </div>
                     </form>
                 </ul>
