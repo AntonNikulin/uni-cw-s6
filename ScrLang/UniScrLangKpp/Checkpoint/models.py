@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # -*- coding: utf-8 -*-
 
 class Record(models.Model):
-    vehicleNumber = models.CharField(max_length=50, blank=False)
+    vehicleNumber = models.CharField(max_length=50, blank=False, unique=True)
     driver = models.CharField(max_length=50, blank=True)
     destination = models.CharField(max_length=50, blank=True)
     cargo = models.CharField(max_length=50, blank=True)
