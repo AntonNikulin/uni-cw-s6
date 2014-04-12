@@ -37,7 +37,7 @@ class FetchFiles(threading.Thread):
             dec = int(number, intBase)
             self.lock.acquire()
             print '%s : lock acquired ' % self.name
-            win32file.WriteFile(self.hOutput, str(dec)+"\n")
+            win32file.WriteFile(self.hOutput, fn +": "+str(dec)+"\n")
             print '%s : write done ' % self.name
             print '%s lock released ' % self.name
             self.lock.release()
