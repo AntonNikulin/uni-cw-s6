@@ -15,7 +15,7 @@ def createFileOpenNotepad(filename):
        win32file.CREATE_ALWAYS,     # File to be created. \
        win32file.FILE_ATTRIBUTE_NORMAL, # Normal attributes \
        None )                       # No template file.
-
+    win32file.CloseHandle(h1)
 
     #opens file in notepad in new process
     si = win32process.STARTUPINFO()

@@ -30,12 +30,11 @@ class FetchFiles(threading.Thread):
                 #Convert to decimal
                 base, number = d.readline().split()
                 intBase = int(base)
-                dec = int(number, intBase)
             except:
                 print "=====ERR===="
                 print 'File %s failed: %s' % (fn, sys.exc_info()[0])
-                print base, number, intBase
                 print "=====   ====="
+            dec = int(number, intBase)
             self.lock.acquire()
             print '%s : lock acquired ' % self.name
             win32file.WriteFile(self.hOutput, str(dec)+"\n")
