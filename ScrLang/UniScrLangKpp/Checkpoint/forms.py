@@ -19,4 +19,4 @@ class RegistrationForm(forms.Form):
 class RecordForm(forms.ModelForm):
     class Meta:
         model = Record
-        exclude = ['recordedBy']
+        exclude = ['recordedBy','destination']

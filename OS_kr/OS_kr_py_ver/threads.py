@@ -42,5 +42,3 @@ class FetchFiles(threading.Thread):
             print '%s lock released ' % self.name
             self.lock.release()
             print 'FILE %s fetched by %s \n' % (fn, self.name)
-
-
