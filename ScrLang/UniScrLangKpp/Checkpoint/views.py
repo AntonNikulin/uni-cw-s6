@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 
-from forms import RegistrationForm, RecordForm
+from forms import *
 from .models import Record
 
 
@@ -49,8 +49,9 @@ def searchVehicle(request):
 
 def search(request):
     if request.method == 'POST':
-        print request.POST['type']
-    return render(request, 'Checkpoint/search_main.html')
+        print request.POST
+    form = SearchForm()
+    return render(request, 'Checkpoint/search_main.html', {'form': form})
 
 def statistics(request):
     driverCount = {}

@@ -27,19 +27,16 @@ public class task_25 implements DocumentListener {
 
 	@Override
 	public void changedUpdate(DocumentEvent arg0) {
-		// TODO Auto-generated method stub
-		frame.resLabel.setText("Upd");
+
 	}
 
 	@Override
 	public void insertUpdate(DocumentEvent arg0) {
-		// TODO Auto-generated method stub
 		frame.resLabel.setText("ins");
 	}
 
 	@Override
 	public void removeUpdate(DocumentEvent arg0) {
-		// TODO Auto-generated method stub
 		frame.resLabel.setText("rem");
 	}
 	

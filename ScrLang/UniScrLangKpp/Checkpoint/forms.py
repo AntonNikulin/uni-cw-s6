@@ -20,3 +20,17 @@ class RecordForm(forms.ModelForm):
     class Meta:
         model = Record
         exclude = ['recordedBy','destination']
+
+TYPES = (
+    ('driver','Driver'),
+    ('vehicleNumber','VehicleNumber'),
+)
+DATES = (
+    (1, '1 day'),
+    (7, '7 days')
+)
+class SearchForm(forms.Form):
+    search = forms.CharField(label=u'Search: ',max_length=40)
+    type = forms.ChoiceField(choices=TYPES)
+    date = forms.ChoiceField(choices=DATES)
+
