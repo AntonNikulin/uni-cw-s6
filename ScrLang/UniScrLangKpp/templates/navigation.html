@@ -16,6 +16,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="{% url 'createRecord' %}">Add Record</a></li>
                     <li><a href="{% url 'statistics' %}">Statistics</a></li>
+                    <li><a href="{% url 'search' %}">Search</a></li>
                     <li class="divider"></li>
                     <form id="navbarSearch" action="{% url 'searchDriver' %}" method="POST" role="search" class="navbar-form navbar-left">
                         {% csrf_token %}

@@ -40,6 +40,16 @@ def searchDriver(request):
         return render(request, 'Checkpoint/table.html', {'Records': Records,
                                                          'count': count})
 
+def searchVehicle(request):
+    if request.method == 'POST':
+        Records = Record.objects.filter(vehicleNumber__icontains = request.POST['driver'])
+        count = len(Records)
+        return render(request, 'Checkpoint/table.html', {'Records': Records,
+                                                         'count': count})
+
+def search(request):
+    return render(request, 'Checkpoint/search_main.html')
+
 def statistics(request):
     driverCount = {}
     Records = Record.objects.all()
