@@ -1,9 +1,5 @@
 
-public class q25 {
-
-	public static void main(String[] args) {
-		System.out.print(q25.SumN(342));
-	}
+public class task_25 {
 	
 	//2.1 наибольший общий делитель
 	public static int GCD(int a, int b) { return b==0 ? a : GCD(b, a%b); }
@@ -17,5 +13,4 @@ public class q25 {
 		}
 		return sum;
 	}
-
 }
