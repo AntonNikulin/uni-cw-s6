@@ -24,15 +24,15 @@ class CustomFrame extends JFrame
 		setTitle("Java control work");
 		setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 		
-		JTextField textField = new JTextField();
+		JButton btnTask1 = new JButton("Task 2-5");
 		
 		JPanel westPanel = new JPanel();
-		westPanel.setLayout(new GridLayout(2,2));
-		westPanel.add(textField);
-		
+		westPanel.setLayout(new BoxLayout(westPanel, BoxLayout.Y_AXIS));
+		westPanel.add(btnTask1);
+
 		add(westPanel, BorderLayout.WEST);
 	}
 	
-	public static final int DEFAULT_WIDTH = 300;
-	public static final int DEFAULT_HEIGHT = 300;
+	public static final int DEFAULT_WIDTH = 500;
+	public static final int DEFAULT_HEIGHT = 600;
 }
