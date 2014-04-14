@@ -4,4 +4,34 @@
 
 {% block content %}
 
+    <div class="topPadding" xmlns="http://www.w3.org/1999/html">
+        <div class="container">
+            <div class="row">
+                <form method="post" class="form-horizontal col-md-6 col-md-offset-3" action="{% url 'search' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="search_for" class="control-label">Search for</label>
+                        <div class="controls ">
+                            <input class="textinput textInput form-control" id="search_for" name="search_for" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="control-label">Type:</label>
+                        <select id="type" name="type">
+                            <option value="Driver">Driver</option>
+                            <option value="VehicleNumber">Vehicle number</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userDate" class="control-label">Date:</label>
+                        <select id="userDate">
+                            <option value="1">Today</option>
+                            <option value="7">Week</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

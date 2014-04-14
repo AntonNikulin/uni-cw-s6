@@ -48,6 +48,8 @@ def searchVehicle(request):
                                                          'count': count})
 
 def search(request):
+    if request.method == 'POST':
+        print request.POST['type']
     return render(request, 'Checkpoint/search_main.html')
 
 def statistics(request):
