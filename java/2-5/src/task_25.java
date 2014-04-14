@@ -1,10 +1,11 @@
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
-public class task_25 implements ActionListener {
+public class task_25 implements DocumentListener {
 	
 	public task_25(CustomFrame frame){
 		this.frame = frame;
@@ -21,10 +22,25 @@ public class task_25 implements ActionListener {
 		        n/=10;
 		}
 		return sum;
+	}	
+
+
+	@Override
+	public void changedUpdate(DocumentEvent arg0) {
+		// TODO Auto-generated method stub
+		frame.resLabel.setText("Upd");
 	}
-	
-	public void actionPerformed(ActionEvent event){
-		frame.resLabel.setText("Hello");
+
+	@Override
+	public void insertUpdate(DocumentEvent arg0) {
+		// TODO Auto-generated method stub
+		frame.resLabel.setText("ins");
+	}
+
+	@Override
+	public void removeUpdate(DocumentEvent arg0) {
+		// TODO Auto-generated method stub
+		frame.resLabel.setText("rem");
 	}
 	
 	private CustomFrame frame;

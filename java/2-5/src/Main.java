@@ -47,8 +47,8 @@ class CustomFrame extends JFrame
 		inputPanel.add(resLabel);
 		
 		task_25 t2 = new task_25(this);
-		textField.addActionListener(t2);
-		btnTask1.addActionListener(t2);
+		textField.getDocument().addDocumentListener(t2);
+
 		
 		
 		add(mainPanel);
