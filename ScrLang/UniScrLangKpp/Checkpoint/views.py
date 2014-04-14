@@ -49,7 +49,11 @@ def searchVehicle(request):
 
 def search(request):
     if request.method == 'POST':
-        print request.POST
+        if request.POST['type'] == 'driver':
+            Records = Record.objects.filter(driver__icontains = request.POST['search'])
+        elif request.POST['type'] == 'vehicleNumber':
+            Records = Record.objects.filter(vehicleNumber__icontains = request.POST['search'])
+        return render(request, 'Checkpoint/table.html', {'Records': Records})
     form = SearchForm()
     return render(request, 'Checkpoint/search_main.html', {'form': form})
 
