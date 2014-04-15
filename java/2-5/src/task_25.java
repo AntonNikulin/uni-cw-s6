@@ -61,7 +61,12 @@ public class task_25 implements DocumentListener {
 	}
  
 
-
+	public void update(int a, int n){
+		frame.task251.setText(Integer.toString(this.GCD(n, a)));
+		frame.task252.setText(Integer.toString(this.SumN(n)));
+		frame.task253.setText(String.valueOf(this.isPrime(n)));
+		frame.task254.setText(String.valueOf(this.sumSeq(n)));
+	}
 	
 	@Override
 	public void changedUpdate(DocumentEvent arg0) {
@@ -70,13 +75,29 @@ public class task_25 implements DocumentListener {
 
 	@Override
 	public void insertUpdate(DocumentEvent arg0) {
-		frame.resLabel.setText("ins");
+		try{
+			n = Integer.parseInt(frame.task1InputField.getText());
+			a = Integer.parseInt(frame.task1InputFieldA.getText());
+		}
+		catch (NumberFormatException e){
+			
+		}
+		this.update(a, n);
 	}
 
 	@Override
 	public void removeUpdate(DocumentEvent arg0) {
-		frame.resLabel.setText("rem");
+		try{
+			n = Integer.parseInt(frame.task1InputField.getText());
+			a = Integer.parseInt(frame.task1InputFieldA.getText());
+		}
+		catch (NumberFormatException e){
+			
+		}
+		this.update(a, n);
 	}
 	
+	private int a;
+	private int n;
 	private CustomFrame frame;
 }

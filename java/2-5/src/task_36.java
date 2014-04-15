@@ -89,6 +89,7 @@ public class task_36 {
     public static void pascalTriangle() {
 
         int[][] array = new int[10][];
+        //fill
         for (int i = 0; i < array.length; i++) {
             array[i] = new int[i+1];
             array[i][0] = 1;
@@ -100,6 +101,7 @@ public class task_36 {
                 array[i][j] = array[i - 1][j - 1] + array[i - 1][j];
             }
         }
+        //print
         for (int i = 0; i < array.length; i++) {
             int[] is = array[i];
             for (int j = 0; j < (10-i)/2; j++) {
