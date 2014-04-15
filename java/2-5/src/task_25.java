@@ -23,8 +23,31 @@ public class task_25 implements DocumentListener {
 		}
 		return sum;
 	}	
+	
+	//2.3 простое число
+	public static boolean isPrime(int n) {
+	    for(int i=2;2*i<n;i++) {
+	        if(n%i==0)
+	            return false;
+	    }
+	    return true;
+	}
+	
+	//2.4 Сумма ряда 1!-2!+3!-4!+5!-...+n!
+	public static int sumSeq(int n){
+		int sum = 0;
+		for (int i=1;i<=n;i++){
+			sum = (i%2 == 0) ? sum + factorial(i) : sum - factorial(i);
+		}
+		return sum;
+	}
+	
+	public static int factorial(int n){
+		return n <= 1 ? 1 : n * factorial(n-1);
+	}
 
 
+	
 	@Override
 	public void changedUpdate(DocumentEvent arg0) {
 
