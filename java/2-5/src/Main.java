@@ -5,6 +5,7 @@ import javax.swing.*;
 public class Main {
 
 	public static void main(String[] args) {
+		/*
 		EventQueue.invokeLater(new Runnable()
 		{
 			public void run()
@@ -15,7 +16,9 @@ public class Main {
 				frame.setVisible(true);
 			}
 		});
-	}
+		*/		
+		task_36.pascalTriangle();
+	}	
 }
 
 class CustomFrame extends JFrame

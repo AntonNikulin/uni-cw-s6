@@ -26,7 +26,7 @@ public class task_25 implements DocumentListener {
 	
 	//2.3 простое число
 	public static boolean isPrime(int n) {
-	    for(int i=2;2*i<n;i++) {
+	    for(int i=2;i<n;i++) {
 	        if(n%i==0)
 	            return false;
 	    }
@@ -37,7 +37,7 @@ public class task_25 implements DocumentListener {
 	public static int sumSeq(int n){
 		int sum = 0;
 		for (int i=1;i<=n;i++){
-			sum = (i%2 == 0) ? sum + factorial(i) : sum - factorial(i);
+			sum = (i%2 == 0) ? sum - factorial(i) : sum + factorial(i);
 		}
 		return sum;
 	}
