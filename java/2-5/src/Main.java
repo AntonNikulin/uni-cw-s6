@@ -2,6 +2,11 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
+import java.io.*;
+import java.util.Arrays;
+
 public class Main {
 
 	public static void main(String[] args) {		
@@ -67,31 +72,74 @@ class CustomFrame extends JFrame
 		task_25 t2 = new task_25(this);
 		//Notify listnr when input changed
 		task1InputField.getDocument().addDocumentListener(t2);
-		task1InputFieldA.getDocument().addDocumentListener(t2);
+		task1InputFieldA.getDocument().addDocumentListener(t2);		
 		
-	    tabbedPane.addTab("Tab 1", inputPanel);
+	    tabbedPane.addTab("Task #1", inputPanel);
 	     JPanel task1Panel = new JPanel();
 	     
 
 	        
-			
-	     JComponent panel2 = makeTextPanel("Task #2");
-	     tabbedPane.addTab("Task #1",  panel2);
+		//TASK 2 gui
+	     //set up
+	     JPanel task2Panel = new JPanel();
+	     tabbedPane.addTab("Task #2",  task2Panel);
+	     jtaTask2Console = new JTextArea();
+	     task2Panel.add(jtaTask2Console);
+	     	//no time to prettify
+		    System.out.println("Создать массив из 100 элементов и заполнить его простыми числами");
+		    System.out.println(Arrays.toString(task_36.arrayOfPrimes()));
+	     
+	     redirectSystemStreams();
+	     //print result
+	     System.out.println("Разместить в памяти массив из 20 элементов и заполнить его рядом чисел Фиббоначчи.");
+	    System.out.println(Arrays.toString( task_36.fib()));
+	    System.out.println("Создать двумерный массив символов и заполнить его буквами Ч и Б в шахматном порядке");
+	    task_36.chessArray();
+	    System.out.println("Создать целый шестимерный массив с двумя значениями в каждом измерении. сколько потребуется чисел?");
+	    System.out.println(Integer.toString(task_36.multiArray()));
+	    System.out.println("треугольник Паскаля");
+	    task_36.pascalTriangle();
+	    
+	     
 		
 		add(tabbedPane);
 	}
 	
-    protected JComponent makeTextPanel(String text) {
-        JPanel panel = new JPanel(false);
-        JLabel filler = new JLabel(text);
-        filler.setHorizontalAlignment(JLabel.CENTER);
-        panel.setLayout(new GridLayout(1, 1));
-        panel.add(filler);
-        return panel;
-    }
+	//where the text get redirected.
+	  private void updateTextArea(final String text) {
+	    SwingUtilities.invokeLater(new Runnable() {
+	      public void run() {
+	        jtaTask2Console.append(text);
+	      }
+	    });
+	  }
+	 
+	//Followings are The Methods that do the Redirect
+	  private void redirectSystemStreams() {
+	    OutputStream out = new OutputStream() {
+	      @Override
+	      public void write(int b) throws IOException {
+	        updateTextArea(String.valueOf((char) b));
+	      }
+	 
+	      @Override
+	      public void write(byte[] b, int off, int len) throws IOException {
+	        updateTextArea(new String(b, off, len));
+	      }
+	 
+	      @Override
+	      public void write(byte[] b) throws IOException {
+	        write(b, 0, b.length);
+	      }
+	    };
+	 
+	    System.setOut(new PrintStream(out, true));
+	    System.setErr(new PrintStream(out, true));
+	  }
+
 	
-	public static final int DEFAULT_WIDTH = 500;
-	public static final int DEFAULT_HEIGHT = 600;
+	public static final int DEFAULT_WIDTH = 650;
+	public static final int DEFAULT_HEIGHT = 500;
 	
 	//t25
 	public JTextField task1InputField;
@@ -101,6 +149,8 @@ class CustomFrame extends JFrame
 	public JLabel task253;
 	public JLabel task254;
 	public JLabel task255;
+	
+	private JTextArea jtaTask2Console;
 
 	
 }

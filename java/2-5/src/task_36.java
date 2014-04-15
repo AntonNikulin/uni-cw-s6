@@ -33,7 +33,7 @@ public class task_36 {
 
     
     //2.3 Создать двумерный массив символов и заполнить его буквами Ч и Б в шахматном порядке.    
-    public static int[][] chessArray() {
+    public static void chessArray() {
         int[][] array = new int[8][8];
         for (int i = 0; i < array.length; i++) {
             int[] sub = array[i];
@@ -52,7 +52,6 @@ public class task_36 {
             }
             System.out.println();
         }
-        return array;
     }
 
     //2.4 Создать целый шестимерный массив с двумя значениями в каждом измерении.
