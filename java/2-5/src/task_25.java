@@ -45,6 +45,21 @@ public class task_25 implements DocumentListener {
 	public static int factorial(int n){
 		return n <= 1 ? 1 : n * factorial(n-1);
 	}
+	
+
+	//2.5 Cколько шестизначных цифр имеют равную сумму трех первых и трех последних цифр.
+	public static int mirrorSum() {
+		int result = 0;
+		for (int i = 100000; i < 1000000; i++) {
+			int firstPart = i/1000;
+			int secondPart = i%1000;
+			if (firstPart == secondPart) {
+				result++;
+			}
+		}
+		return result;
+	}
+ 
 
 
 	
