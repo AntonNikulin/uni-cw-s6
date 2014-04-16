@@ -3,9 +3,10 @@ public class Circle {
 /*
  * Helper class for 4.6 task
  */
-	public Circle(int x, int y){
+	public Circle(int x, int y, int r){
 		this.setX(x);
 		this.setY(y);
+		this.setR(r);
 	}
 	
 	public void moveCircle(int dx, int dy){

@@ -100,10 +100,37 @@ class CustomFrame extends JFrame
 	    System.out.println("треугольник Паскаля");
 	    task_36.pascalTriangle();
 	    
+	    
+	    //TASK 3 gui
+	     JPanel task3Panel = new JPanel();
+	     task3Panel.setLayout(new GridLayout(0,1));
+	     drawingPane drwPanel = new drawingPane(this);
+	     task3Panel.add(drwPanel);
+	     
+	     JPanel cntrlPanel = new JPanel();
+	     task3Panel.add(cntrlPanel);
+	     btnL = new JButton("Left");
+	     cntrlPanel.add(btnL);
+	     btnR = new JButton("Right");
+	     cntrlPanel.add(btnR);
+	     btnL.addActionListener(drwPanel);
+	     btnR.addActionListener(drwPanel);
+	     btnU = new JButton("Up");
+	     cntrlPanel.add(btnU);
+	     btnD = new JButton("Down");
+	     cntrlPanel.add(btnD);
+	     btnL.addActionListener(drwPanel);
+	     btnR.addActionListener(drwPanel);
+	     btnU.addActionListener(drwPanel);
+	     btnD.addActionListener(drwPanel);
+	     
+	     tabbedPane.addTab("Task #3",  task3Panel);
+
 	     
 		
 		add(tabbedPane);
 	}
+	
 	
 	//where the text get redirected.
 	  private void updateTextArea(final String text) {
@@ -151,6 +178,12 @@ class CustomFrame extends JFrame
 	public JLabel task255;
 	
 	private JTextArea jtaTask2Console;
+	
+	//t36
+	public JButton btnL;
+	public JButton btnR;
+	public JButton btnU;
+	public JButton btnD;
 
 	
 }
