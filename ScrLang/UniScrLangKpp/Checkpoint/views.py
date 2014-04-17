@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -49,11 +51,24 @@ def searchVehicle(request):
 
 def search(request):
     if request.method == 'POST':
-        if request.POST['type'] == 'driver':
-            Records = Record.objects.filter(driver__icontains = request.POST['search'])
-        elif request.POST['type'] == 'vehicleNumber':
-            Records = Record.objects.filter(vehicleNumber__icontains = request.POST['search'])
-        return render(request, 'Checkpoint/table.html', {'Records': Records})
+        Records = None
+        if request.POST['type'] == 'driver' and request.POST['date'] == '1':
+            Records = Record.objects.filter(driver__icontains = request.POST['search'])\
+                                            .exclude(time__lt=datetime.date.today())
+        if request.POST['type'] == 'driver' and request.POST['date'] == '7':
+            Records = Record.objects.filter(driver__icontains = request.POST['search'])\
+                                            .exclude(time__lt=datetime.date.today()-datetime.timedelta(days=7))
+
+        if request.POST['type'] == 'vehicleNumber' and request.POST['date'] == '1':
+            Records = Record.objects.filter(vehicleNumber__icontains = request.POST['search'])\
+                                                        .exclude(time__lt=datetime.date.today())
+        if request.POST['type'] == 'vehicleNumber' and request.POST['date'] == '7':
+            Records = Record.objects.filter(vehicleNumber__icontains = request.POST['search'])\
+                                                        .exclude(time__lt=datetime.date.today()-datetime.timedelta(days=7))
+
+
+        return render(request, 'Checkpoint/table.html', {'Records': Records,
+                                                         'count': len(Records)})
     form = SearchForm()
     return render(request, 'Checkpoint/search_main.html', {'form': form})
 

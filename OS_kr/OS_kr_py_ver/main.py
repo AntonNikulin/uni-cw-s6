@@ -1,7 +1,5 @@
 from custHelpFunc import *
-import random
 import threading
-import uuid
 import win32file
 import threads
 import win32event
